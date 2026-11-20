@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca Digital UniFECAF | Livros e acervo acadêmico</title>
+  <meta name="description" content="Acesse a Biblioteca Digital UniFECAF: livros acadêmicos por categoria, destaques do acervo, unidades com espaços de estudo e canais de atendimento ao aluno.">
+
+  <!-- Open Graph: prévia do link ao compartilhar (WhatsApp, redes sociais) -->
+  <meta property="og:title" content="Biblioteca Digital UniFECAF">
+  <meta property="og:description" content="Livros acadêmicos, unidades e serviços da biblioteca da UniFECAF.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/imagens/hero.webp">
+
+  <link rel="icon" href="assets/imagens/favicon.svg" type="image/svg+xml">
+
+  <!-- Fontes: Zalando Sans (títulos, a mesma do site oficial) e Roboto (texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Zalando+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Pré-carrega a imagem do banner principal, a maior da primeira tela -->
+  <link rel="preload" as="image" href="assets/imagens/hero.webp" type="image/webp">
+</head>
+<body>
+  <!-- Atalho para quem navega por teclado ou leitor de tela -->
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="cabecalho" id="topo">
+    <div class="container cabecalho__conteudo">
+      <a href="#topo" class="logo">
+        <span class="logo__marca">Uni<strong>FECAF</strong></span>
+        <span class="logo__sub">Biblioteca Digital</span>
+      </a>
+      <nav aria-label="Navegação principal">
+        <ul class="menu">
+          <li><a href="#biblioteca" class="menu__ativo">Biblioteca</a></li>
+          <li><a href="#livros">Livros</a></li>
+          <li><a href="#unidades">Unidades</a></li>
+          <li><a href="#contatos">Contatos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- Banner principal (hero) -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__conteudo">
+          <p class="hero__selo">Acervo digital disponível 24 horas</p>
+          <h1>Biblioteca Digital UniFECAF</h1>
+          <p class="hero__texto">Livros, materiais acadêmicos e apoio à pesquisa reunidos em um só lugar, no computador ou no celular.</p>
+          <a href="#livros" class="botao">Explorar acervo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre a biblioteca -->
+    <section id="biblioteca" class="secao secao--escura" aria-labelledby="titulo-sobre">
+      <div class="container">
+        <h2 id="titulo-sobre">Sobre a nossa biblioteca</h2>
+        <div class="sobre">
+          <div>
+            <p>A Biblioteca Digital UniFECAF nasceu para que você encontre o que precisa para estudar sem depender de horário ou lugar. Aqui estão os livros indicados pelos seus professores, materiais de apoio e conteúdos para ir além da sala de aula.</p>
+            <p>O acervo atende alunos da graduação presencial e EAD, da pós-graduação e professores de todos os cursos.</p>
+          </div>
+          <img class="foto" src="assets/imagens/sobre-1.webp" alt="Estudantes vistos por entre os livros de uma estante" width="800" height="600" loading="lazy">
+          <div>
+            <p>Além do acervo digital, você conta com empréstimo de livros físicos nas unidades, espaços de estudo individuais e em grupo e uma equipe pronta para ajudar na pesquisa e na formatação dos seus trabalhos acadêmicos.</p>
+          </div>
+        </div>
+
+        <ul class="servicos">
+          <li>
+            <figure>
+              <img class="foto" src="assets/imagens/sobre-2.webp" alt="Homem lendo um conteúdo digital em um tablet" width="800" height="600" loading="lazy">
+              <figcaption>Acervo digital</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <img class="foto" src="assets/imagens/sobre-3.webp" alt="Pessoa segurando uma pilha de livros" width="800" height="600" loading="lazy">
+              <figcaption>Empréstimo de livros</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <img class="foto" src="assets/imagens/sobre-4.webp" alt="Estudantes organizando anotações juntos em uma mesa" width="800" height="600" loading="lazy">
+              <figcaption>Espaços de estudo</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <img class="foto" src="assets/imagens/sobre-5.webp" alt="Pessoa fazendo anotações em um caderno ao lado do notebook" width="800" height="600" loading="lazy">
+              <figcaption>Apoio à pesquisa</figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Banner com citação: divisória visual entre as seções -->
+    <section class="banner" aria-label="Citação sobre leitura">
+      <div class="container">
+        <figure class="citacao">
+          <blockquote>
+            <p>“Um país se faz com homens e livros.”</p>
+          </blockquote>
+          <figcaption>Monteiro Lobato</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Nossos livros: filtro só com CSS (radio + :has) e cards -->
+    <section id="livros" class="secao secao--clara" aria-labelledby="titulo-livros">
+      <div class="container">
+        <h2 id="titulo-livros">Nossos livros</h2>
+
+        <fieldset class="filtro">
+          <legend class="sr-only">Filtrar livros por categoria</legend>
+          <input type="radio" name="categoria" id="cat-todos" class="sr-only" checked>
+          <label for="cat-todos">Todos</label>
+          <input type="radio" name="categoria" id="cat-tec" class="sr-only">
+          <label for="cat-tec">Tecnologia</label>
+          <input type="radio" name="categoria" id="cat-gestao" class="sr-only">
+          <label for="cat-gestao">Gestão</label>
+          <input type="radio" name="categoria" id="cat-fin" class="sr-only">
+          <label for="cat-fin">Finanças</label>
+          <input type="radio" name="categoria" id="cat-geral" class="sr-only">
+          <label for="cat-geral">Conhecimento geral</label>
+        </fieldset>
+
+        <div class="livros">
+          <article class="card" data-cat="tec">
+            <span class="card__categoria">Tecnologia</span>
+            <h3 class="card__titulo">Código Limpo</h3>
+            <img class="card__capa" src="assets/imagens/livro-1.webp" alt="Capa do livro Código Limpo, de Robert C. Martin" width="340" height="510" loading="lazy">
+            <p class="card__autor">Robert C. Martin · Análise e Desenvolvimento de Sistemas</p>
+            <p>Boas práticas para escrever código legível, fácil de manter e de testar.</p>
+            <details class="card__sinopse">
+              <summary>Ler sinopse</summary>
+              <p>Com exemplos práticos, o autor mostra como dar bons nomes, escrever funções pequenas, tratar erros e refatorar código existente. Leitura essencial para quem está começando em desenvolvimento de software.</p>
+            </details>
+            <a class="botao botao--azul card__botao" href="https://openlibrary.org/works/OL25308313W" target="_blank" rel="noopener">Saiba mais<span class="sr-only"> sobre Código Limpo (abre em nova aba)</span></a>
+          </article>
+
+          <article class="card" data-cat="tec">
+            <span class="card__categoria">Tecnologia</span>
+            <h3 class="card__titulo">Entendendo Algoritmos</h3>
+            <img class="card__capa" src="assets/imagens/livro-2.webp" alt="Capa do livro Entendendo Algoritmos, de Aditya Y. Bhargava" width="340" height="510" loading="lazy">
+            <p class="card__autor">Aditya Y. Bhargava · Análise e Desenvolvimento de Sistemas</p>
+            <p>Um guia ilustrado para entender algoritmos sem complicação.</p>
+            <details class="card__sinopse">
+              <summary>Ler sinopse</summary>
+              <p>Com desenhos e exemplos do dia a dia, o livro explica busca binária, recursão, ordenação, grafos e programação dinâmica. Ideal para quem quer uma base sólida em lógica e estruturas de dados.</p>
+            </details>
+            <a class="botao botao--azul card__botao" href="https://openlibrary.org/works/OL34952200W" target="_blank" rel="noopener">Saiba mais<span class="sr-only"> sobre Entendendo Algoritmos (abre em nova aba)</span></a>
+          </article>
+
+          <article class="card" data-cat="gestao">
+            <span class="card__categoria">Gestão</span>
+            <h3 class="card__titulo">Introdução à Teoria Geral da Administração</h3>
+            <img class="card__capa" src="assets/imagens/livro-3.webp" alt="Capa do livro Introdução à Teoria Geral da Administração, de Idalberto Chiavenato" width="340" height="510" loading="lazy">
+            <p class="card__autor">Idalberto Chiavenato · Administração</p>
+            <p>Uma visão abrangente das teorias que formaram a administração moderna.</p>
+            <details class="card__sinopse">
+              <summary>Ler sinopse</summary>
+              <p>Da Administração Científica às abordagens contemporâneas, Chiavenato apresenta as principais escolas do pensamento administrativo e como elas se aplicam às organizações de hoje.</p>
+            </details>
+            <a class="botao botao--azul card__botao" href="https://openlibrary.org/works/OL27687284W" target="_blank" rel="noopener">Saiba mais<span class="sr-only"> sobre Introdução à Teoria Geral da Administração (abre em nova aba)</span></a>
+          </article>
+
+          <article class="card" data-cat="gestao">
+            <span class="card__categoria">Gestão</span>
+            <h3 class="card__titulo">O Poder do Hábito</h3>
+            <img class="card__capa" src="assets/imagens/livro-4.webp" alt="Capa do livro O Poder do Hábito, de Charles Duhigg" width="340" height="510" loading="lazy">
+            <p class="card__autor">Charles Duhigg · Gestão de Pessoas</p>
+            <p>Por que fazemos o que fazemos na vida e nos negócios.</p>
+            <details class="card__sinopse">
+              <summary>Ler sinopse</summary>
+              <p>Duhigg explica o ciclo deixa, rotina e recompensa e mostra como empresas, equipes e pessoas mudam hábitos para melhorar resultados. Útil para os estudos, a carreira e a liderança.</p>
+            </details>
+            <a class="botao botao--azul card__botao" href="https://openlibrary.org/works/OL16015154W" target="_blank" rel="noopener">Saiba mais<span class="sr-only"> sobre O Poder do Hábito (abre em nova aba)</span></a>
+          </article>
+
+          <article class="card" data-cat="fin">
+            <span class="card__categoria">Finanças</span>
+            <h3 class="card__titulo">Pai Rico, Pai Pobre</h3>
+            <img class="card__capa" src="assets/imagens/livro-5.webp" alt="Capa do livro Pai Rico, Pai Pobre, de Robert T. Kiyosaki" width="340" height="510" loading="lazy">
+            <p class="card__autor">Robert T. Kiyosaki · Ciências Contábeis</p>
+            <p>Lições sobre dinheiro e educação financeira que a escola não ensina.</p>
+            <details class="card__sinopse">
+              <summary>Ler sinopse</summary>
+              <p>A partir da história de seus dois “pais”, Kiyosaki discute ativos, passivos, investimentos e a importância da educação financeira para tomar decisões melhores com o próprio dinheiro.</p>
+            </details>
+            <a class="botao botao--azul card__botao" href="https://openlibrary.org/works/OL2010879W" target="_blank" rel="noopener">Saiba mais<span class="sr-only"> sobre Pai Rico, Pai Pobre (abre em nova aba)</span></a>
+          </article>
+
+          <article class="card" data-cat="geral">
+            <span class="card__categoria">Conhecimento geral</span>
+            <h3 class="card__titulo">Sapiens</h3>
+            <img class="card__capa" src="assets/imagens/livro-6.webp" alt="Capa do livro Sapiens: uma breve história da humanidade, de Yuval Noah Harari" width="340" height="510" loading="lazy">
+            <p class="card__autor">Yuval Noah Harari · Leitura para todos os cursos</p>
+            <p>Uma breve história da humanidade, da Idade da Pedra ao século XXI.</p>
+            <details class="card__sinopse">
+              <summary>Ler sinopse</summary>
+              <p>Harari percorre as revoluções cognitiva, agrícola e científica para explicar como o Homo sapiens passou a dominar o planeta e quais desafios isso traz para o futuro.</p>
+            </details>
+            <a class="botao botao--azul card__botao" href="https://openlibrary.org/works/OL17075811W" target="_blank" rel="noopener">Saiba mais<span class="sr-only"> sobre Sapiens (abre em nova aba)</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- As unidades -->
+    <section id="unidades" class="secao secao--noite" aria-labelledby="titulo-unidades">
+      <div class="container">
+        <h2 id="titulo-unidades">As unidades</h2>
+        <div class="unidades">
+          <article class="unidade">
+            <img class="foto" src="assets/imagens/unidade-1.webp" alt="Fachada moderna do Polo Centro da UniFECAF, com marquise branca e letreiro da instituição" width="800" height="600" loading="lazy">
+            <div>
+              <h3>Polo Centro</h3>
+              <p>Atendimento presencial da biblioteca: consulta ao acervo físico, empréstimo e devolução de livros e orientação para pesquisas e trabalhos acadêmicos.</p>
+              <address>
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=Rod.+R%C3%A9gis+Bittencourt%2C+157%2C+Tabo%C3%A3o+da+Serra+SP" target="_blank" rel="noopener">Rod. Régis Bittencourt, 157, Parque Santos Dumont, Taboão da Serra – SP, 06768-000<span class="sr-only"> (abre o mapa em nova aba)</span></a>
+              </address>
+              <p class="unidade__horario"><strong>Horário:</strong> segunda a sexta, das 7h às 22h · sábado, das 8h às 17h</p>
+            </div>
+          </article>
+
+          <article class="unidade">
+            <img class="foto" src="assets/imagens/unidade-2.webp" alt="Prédio do Polo Principal da UniFECAF, com painel azul e verde da UniFECAF e do Colégio Ser" width="800" height="600" loading="lazy">
+            <div>
+              <h3>Polo Principal</h3>
+              <p>Espaço da biblioteca com acervo dos cursos, empréstimo de livros e lugar para estudar entre uma aula e outra, com apoio da equipe para encontrar o material certo.</p>
+              <address>
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=Av.+Vida+Nova%2C+166%2C+Tabo%C3%A3o+da+Serra+SP" target="_blank" rel="noopener">Av. Vida Nova, 166, Jardim Maria Rosa, Taboão da Serra – SP, 06764-045<span class="sr-only"> (abre o mapa em nova aba)</span></a>
+              </address>
+              <p class="unidade__horario"><strong>Horário:</strong> segunda a sexta, das 7h às 22h · sábado, das 8h às 17h</p>
+            </div>
+          </article>
+
+          <article class="unidade">
+            <img class="foto" src="assets/imagens/unidade-3.webp" alt="Estação de trabalho com computador em uma sala clara" width="800" height="600" loading="lazy">
+            <div>
+              <h3>Biblioteca Digital</h3>
+              <p>Para alunos EAD e de todos os polos: o acervo digital fica disponível no computador ou no celular, de onde você estiver, para ler, pesquisar e se preparar para as provas.</p>
+              <p><strong>Onde:</strong> online, neste site</p>
+              <p class="unidade__horario"><strong>Acesso:</strong> 24 horas, todos os dias</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contatos -->
+    <section id="contatos" class="secao secao--clara" aria-labelledby="titulo-contatos">
+      <div class="container contatos">
+        <div>
+          <h2 id="titulo-contatos">Contatos</h2>
+          <p>Ficou com dúvida sobre empréstimos, acesso ao acervo digital ou normas para trabalhos acadêmicos? Nossa equipe atende presencialmente nas unidades e também pelos canais abaixo.</p>
+          <ul class="contatos__lista">
+            <li><strong>E-mail:</strong> <a href="mailto:biblioteca@exemplo.com.br">biblioteca@exemplo.com.br</a></li>
+            <li><strong>Telefone:</strong> <a href="tel:+551100000000">(11) 0000-0000</a></li>
+            <li><strong>Atendimento:</strong> segunda a sexta, das 8h às 20h</li>
+            <li><strong>Site oficial:</strong> <a href="https://www.unifecaf.com.br" target="_blank" rel="noopener">unifecaf.com.br<span class="sr-only"> (abre em nova aba)</span></a></li>
+          </ul>
+        </div>
+        <img class="foto" src="assets/imagens/contato.webp" alt="Livro aberto ao lado de uma xícara de café" width="800" height="600" loading="lazy">
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape__conteudo">
+      <p>&copy; 2026 Biblioteca Digital UniFECAF. Projeto acadêmico, disciplina Design Web.</p>
+      <p>
+        Capas: <a href="https://openlibrary.org" target="_blank" rel="noopener">Open Library<span class="sr-only"> (abre em nova aba)</span></a>
+        · Fotos: <a href="https://openverse.org" target="_blank" rel="noopener">Openverse (domínio público)<span class="sr-only"> (abre em nova aba)</span></a>
+        · Unidades: <a href="https://www.unifecaf.com.br/post/campus-da-unifecaf-em-taboao-da-serra" target="_blank" rel="noopener">UniFECAF<span class="sr-only"> (abre em nova aba)</span></a>
+        e <a href="https://otaboanense.com.br/evento-inspira-odonto-conecta-alunos-da-unifecaf-a-realidade-do-mercado-odontologico-em-taboao-da-serra/" target="_blank" rel="noopener">O Taboanense<span class="sr-only"> (abre em nova aba)</span></a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
